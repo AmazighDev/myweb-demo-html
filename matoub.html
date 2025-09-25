@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Matoub Lounes Tribute</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { scroll-behavior: smooth; }
+    .timeline-dot { width:1rem; height:1rem; background-color:#4F46E5; border-radius:9999px; flex-shrink:0; }
+    .quote { font-style:italic; border-left:4px solid #4F46E5; padding-left:1rem; margin:1rem 0; color:#1F2937; }
+    .hero-bg { background-image:url('https://source.unsplash.com/1600x600/?music,concert'); background-size:cover; background-position:center; }
+    .timeline-item { opacity:0; transform:translateX(-50px); transition: all 0.6s ease; }
+    .timeline-item.show { opacity:1; transform:translateX(0); }
+    .carousel { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:1rem; padding-bottom:1rem; }
+    .carousel img { flex:0 0 auto; width:300px; height:200px; object-fit:cover; border-radius:1rem; scroll-snap-align:center; transition: transform 0.3s; }
+    .carousel img:hover { transform:scale(1.05); }
+    .nav-btn { position:fixed; top:50%; right:1rem; transform:translateY(-50%); display:flex; flex-direction:column; gap:0.5rem; background-color:#4F46E5; padding:0.5rem 0.75rem; border-radius:1rem; z-index:50; }
+    .nav-btn a { color:white; font-medium; padding:0.25rem 0.5rem; border-radius:0.5rem; text-align:center; transition:all 0.2s; }
+    .nav-btn a.active, .nav-btn a:hover { background-color:#6366F1; }
+    .sticky-header { position:sticky; top:0; z-index:40; background-color:rgba(255,255,255,0.9); backdrop-filter:blur(10px); }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 transition-colors duration-300">
+
+  <!-- Sticky Header with Dark Mode Toggle -->
+  <header class="sticky-header flex justify-between items-center px-6 py-3 shadow-md">
+    <h1 class="text-2xl font-bold text-indigo-600">Matoub Lounes Tribute</h1>
+    <button id="toggle-dark" class="bg-indigo-600 text-white px-3 py-1 rounded-full shadow hover:bg-indigo-700 transition">Dark Mode</button>
+  </header>
+
+  <!-- Floating Nav -->
+  <div class="nav-btn">
+    <a href="#biography">Biography</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#quotes">Quotes</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#music">Music</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero-bg h-96 flex flex-col justify-center items-center text-white text-center shadow-lg">
+    <h2 class="text-5xl font-extrabold mb-4">Matoub Lounes</h2>
+    <p class="text-xl max-w-xl">The Voice of Kabylie – Singer, Poet, and Symbol of Resistance</p>
+  </section>
+
+  <!-- Biography -->
+  <section id="biography" class="p-8 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4 text-indigo-600">Biography</h2>
+    <p class="mb-4">Matoub Lounes (1956–1998) was a legendary Kabyle singer, poet, and activist...</p>
+  </section>
+
+  <!-- Timeline -->
+  <section id="timeline" class="p-8 bg-white">
+    <h2 class="text-3xl font-bold mb-8 text-indigo-600 text-center">Timeline</h2>
+    <div class="relative max-w-4xl mx-auto border-l-4 border-indigo-600">
+      <div class="timeline-item mb-8 flex items-start"><div class="timeline-dot mt-2 ml-0"></div><div class="ml-6"><h3 class="font-bold text-xl">1956 - Birth</h3><p>Born in Taourirt Moussa, Kabylie, Algeria.</p></div></div>
+      <div class="timeline-item mb-8 flex items-start"><div class="timeline-dot mt-2 ml-0"></div><div class="ml-6"><h3 class="font-bold text-xl">1970s - Musical Beginnings</h3><p>Started singing Kabyle music, blending traditional melodies with modern influences.</p></div></div>
+      <div class="timeline-item mb-8 flex items-start"><div class="timeline-dot mt-2 ml-0"></div><div class="ml-6"><h3 class="font-bold text-xl">1990s - Political Activism</h3><p>Became a symbol of resistance during Algeria's civil conflict, advocating for Amazigh rights.</p></div></div>
+      <div class="timeline-item mb-8 flex items-start"><div class="timeline-dot mt-2 ml-0"></div><div class="ml-6"><h3 class="font-bold text-xl">1998 - Assassination</h3><p>Tragically killed while traveling in Kabylie; his death sparked massive mourning and tribute events.</p></div></div>
+    </div>
+  </section>
+
+  <!-- Quotes -->
+  <section id="quotes" class="p-8 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4 text-indigo-600">Famous Quotes</h2>
+    <div class="quote">"I sing to live, I live to resist."</div>
+    <div class="quote">"The Kabyle language is my weapon, my identity, and my pride."</div>
+    <div class="quote">"Freedom is not given; it is taken."</div>
+  </section>
+
+  <!-- Gallery -->
+<!-- Photo Gallery -->
+<!-- Photo Gallery -->
+<section id="gallery" class="p-8 bg-white">
+  <h2 class="text-3xl font-bold mb-6 text-indigo-600 text-center">Photo Gallery</h2>
+  <div class="flex overflow-x-auto gap-4 p-4 snap-x snap-mandatory">
+    <img class="flex-shrink-0 w-72 h-48 object-cover rounded-lg snap-center shadow-lg" src="https://www.politis.fr/wp-content/uploads/2023/07/DOC180-4-808x538.jpg" alt="Photo 1">
+    <img class="flex-shrink-0 w-72 h-48 object-cover rounded-lg snap-center shadow-lg" src="https://www.lecourrierdelatlas.com/wp-content/uploads/2023/06/000_SAPA980628620210-copy.jpg" alt="Photo 2">
+    <img class="flex-shrink-0 w-72 h-48 object-cover rounded-lg snap-center shadow-lg" src="https://kabyle.com/wp-content/uploads/2023/06/matoub-lounes.jpg" alt="Photo 3">
+    <img class="flex-shrink-0 w-72 h-48 object-cover rounded-lg snap-center shadow-lg" src="https://cdn77.pressenza.com/wp-content/uploads/2021/08/Lounes-Matoub-public-820x592.png" alt="Photo 4">
+    <img class="flex-shrink-0 w-72 h-48 object-cover rounded-lg snap-center shadow-lg" src="https://lematindalgerie.com/wp-content/uploads/2022/06/Lwenas.jpg" alt="Photo 5">
+    <img class="flex-shrink-0 w-72 h-48 object-cover rounded-lg snap-center shadow-lg" src="https://3.bp.blogspot.com/-vfqGJrY6uxo/WWZ-3sqLWaI/AAAAAAAABkk/Nc5-j9x4sBQmUFCF_M4jSSBT6aDy62EewCLcBGAs/s1600/matoub-lounes-chanteur-kabyle-algerien.jpg" alt="Photo 6">
+    <img class="flex-shrink-0 w-72 h-48 object-cover rounded-lg snap-center shadow-lg" src="https://tse4.mm.bing.net/th/id/OIP.GJWfx6u8WvfI3pUF7XZsXAHaEY?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Photo 7">
+  </div>
+</section>
+
+
+
+  <!-- Music -->
+  <section id="music" class="p-8 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4 text-indigo-600 text-center">Listen to His Music</h2>
+    <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+      <iframe width="300" height="200" src="https://youtu.be/Ob1mUf56gB0?si=Y5rb_FGkrJpXfE4b" frameborder="0" allowfullscreen class="rounded-xl shadow-lg"></iframe>
+      <iframe width="300" height="200" src="https://www.youtube.com/embed/l4dn0HUj1j8" frameborder="0" allowfullscreen class="rounded-xl shadow-lg"></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="p-6 text-center text-gray-500">
+    &copy; 2025 Tribute to Matoub Lounes – Kabyle Cultural Icon
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Timeline animation
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    function showTimelineItems() {
+      const triggerBottom = window.innerHeight * 0.85;
+      timelineItems.forEach(item => {
+        const top = item.getBoundingClientRect().top;
+        if(top < triggerBottom) item.classList.add('show');
+      });
+    }
+    window.addEventListener('scroll', showTimelineItems);
+    window.addEventListener('load', showTimelineItems);
+
+    // Dark mode toggle
+    const toggle = document.getElementById('toggle-dark');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('bg-gray-900');
+      document.body.classList.toggle('text-gray-100');
+      toggle.textContent = document.body.classList.contains('bg-gray-900') ? 'Light Mode' : 'Dark Mode';
+    });
+
+    // Nav section highlighting
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-btn a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if(scrollY >= sectionTop) current = section.getAttribute('id');
+      });
+      navLinks.forEach(link => link.classList.remove('active'));
+      navLinks.forEach(link => {
+        if(link.getAttribute('href').includes(current)) link.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
